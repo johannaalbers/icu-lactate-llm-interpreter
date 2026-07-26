@@ -26,7 +26,7 @@ Multivariable logistic regression, n = 22,302 ICU stays:
 
 Pseudo R² = 0.083. Higher lactate and older age were independently associated with greater odds of ICU death; sex was not.
 
-The full model output is in [`icu_lactate_logistic_model_results.csv`](icu_lactate_logistic_model_results.csv) and the LLM-generated interpretation in [`interpretation_results.txt`](interpretation_results.txt).
+The full model output is in [`icu_lactate_logistic_model_results.csv`](results/icu_lactate_logistic_model_results.csv) and the LLM-generated interpretation in [`interpretation_results.txt`](results/interpretation_results.txt).
 
 ## Pipeline
 
@@ -48,10 +48,10 @@ Clinical interpretation paragraph
 
 | File | Description |
 |---|---|
-| `icu-lactate-data-extraction.ipynb` | SQL cohort extraction from MIMIC-III. Writes `cohort_export.csv` locally (git-ignored). |
-| `icu-lactate-mortality-analysis.ipynb` | Cleaning, EDA, logistic regression, prompt construction, LLM call. |
-| `icu_lactate_logistic_model_results.csv` | Aggregate model results. No patient-level data. |
-| `interpretation_results.txt` | LLM-generated interpretation of the results above. |
+| `Notebooks/icu-lactate-data-extraction.ipynb` | SQL cohort extraction from MIMIC-III. Writes `cohort_export.csv` locally (git-ignored). |
+| `Notebooks/icu-lactate-mortality-analysis.ipynb` | Cleaning, EDA, logistic regression, prompt construction, LLM call. |
+| `results/icu_lactate_logistic_model_results.csv` | Aggregate model results. No patient-level data. |
+| `results/interpretation_results.txt` | LLM-generated interpretation of the results above. |
 | `.env.example` | Template for the required environment variables. |
 
 ## Setup
@@ -66,7 +66,7 @@ pip install -r requirements.txt
 cp .env.example .env      # then fill in your own credentials
 ```
 
-Run `icu-lactate-data-extraction.ipynb` first (produces the local cohort file), then `icu-lactate-mortality-analysis.ipynb`.
+Run `Notebooks/icu-lactate-data-extraction.ipynb` first (produces the local cohort file), then `Notebooks/icu-lactate-mortality-analysis.ipynb`.
 
 ## Data access and compliance
 
